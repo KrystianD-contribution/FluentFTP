@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net20;net35;net40;net45;net50;netstandard1.4;netstandard1.6;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net5.0</TargetFrameworks>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net20' Or '$(TargetFramework)'=='net35' Or '$(TargetFramework)'=='net40' Or '$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net20' Or '$(TargetFramework)'=='net35' Or '$(TargetFramework)'=='net40' Or '$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50' Or '$(TargetFramework)'=='net5.0'">
     <DefineConstants>$(DefineConstants);NETFX</DefineConstants>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
@@ -29,22 +29,22 @@
 		<DefineConstants>$(DefineConstants);CORE16</DefineConstants>
 	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50' Or $(DefineConstants.Contains('CORE'))">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50' Or '$(TargetFramework)'=='net5.0' Or $(DefineConstants.Contains('CORE'))">
     <DefineConstants>$(DefineConstants);ASYNC</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net45' Or '$(TargetFramework)'=='net50' Or '$(TargetFramework)'=='net5.0'">
     <DefineConstants>$(DefineConstants);NET45</DefineConstants>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(TargetFramework)'=='net50'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='net50' Or '$(TargetFramework)'=='net5.0'">
     <DefineConstants>$(DefineConstants);NET50;CORE</DefineConstants>
   </PropertyGroup>
 
   <!--
   Required only for GetListingAsyncEnumerable
   
-  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0' Or '$(TargetFramework)'=='netstandard2.1' Or '$(TargetFramework)'=='net50'">
+  <PropertyGroup Condition="'$(TargetFramework)'=='netstandard2.0' Or '$(TargetFramework)'=='netstandard2.1' Or '$(TargetFramework)'=='net50' Or '$(TargetFramework)'=='net5.0'">
     <DefineConstants>$(DefineConstants);ASYNCPLUS</DefineConstants>
     <LangVersion>8.0</LangVersion>
   </PropertyGroup>
